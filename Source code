@@ -1,0 +1,26 @@
+password = input("Enter your password: ")
+
+small_char = "abcdefghijklmnopqrstuvwxyz"
+big_char="abcdefghijklmnopqrstuvwxyz".upper()
+special_char = ["!", "@", "3", "$", "%", "^", "&", "*", "?"]
+nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+has_small_char = any(char in small_char for char in password)
+has_special_char = any(char in special_char for char in password)
+has_nums = any(char in nums for char in password)
+has_big_char=any(char in big_char for char in password)
+
+if not has_small_char:
+    print("lowercase letter(s) are missing") 
+if not has_big_char:
+    print("Uppercase letter(s) are missing")
+if not has_special_char:
+    print("Special Character is missing")
+if not has_nums:
+    print("Number is missing")    
+
+
+if has_small_char and has_special_char and has_nums and has_big_char:
+    print("Password is strong.")
+else:
+    print("Password is weak.")
